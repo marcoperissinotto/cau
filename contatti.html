@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - [NOME AZIENDA]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">[NOME AZIENDA]</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="contatti.html" class="current">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact-main">
+        <div class="container">
+            <h3>Contattaci - Siamo a Tua Disposizione</h3>
+            <p class="intro">Hai bisogno di affilare i tuoi utensili? Vuoi maggiori informazioni sui nostri servizi o un preventivo personalizzato? Utilizza i nostri recapiti diretti. Ti risponderemo il prima possibile.</p>
+            
+            <div class="contact-details">
+                <h4>Informazioni di Contatto Dirette:</h4>
+                <p><strong>Telefono:</strong> <a href="tel:[TELEFONO_1]">[TELEFONO_1]</a> ([NOME_CONTATTO_1])</p>
+                <p><strong>Telefono Alt.:</strong> <a href="tel:[TELEFONO_2]">[TELEFONO_2]</a> ([NOME_CONTATTO_2])</p>
+                <p><strong>Email:</strong> <a href="mailto:[EMAIL_AZIENDALE]">[EMAIL_AZIENDALE]</a></p>
+                <p><strong>PEC:</strong> <a href="mailto:[EMAIL_PEC]">[EMAIL_PEC]</a> (Per comunicazioni formali)</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/[NUMERO_WHATSAPP_INTERNAZIONALE]" target="_blank">Chatta con noi su WhatsApp</a> (Numero: [NUMERO_WHATSAPP_VISUALIZZATO])</p>
+                <p><strong>Indirizzo:</strong> [INDIRIZZO COMPLETO]</p>
+                <p><strong>Orari di Apertura:</strong><br>
+                    [LUN-VEN: XX:XX - XX:XX]<br>
+                    [SAB: XX:XX - XX:XX (o Chiuso)]<br>
+                    <em>(Si consiglia di chiamare prima di recarsi in sede)</em>
+                </p>
+            </div>
+
+            <div class="map-placeholder">
+                <h4>Dove Siamo:</h4>
+                <p><em>[Qui verrà inserita una mappa Google Maps con la vostra posizione, una volta che il sito sarà online e avremo un link alla mappa, oppure un'immagine statica della mappa.]</em></p>
+                <img src="placeholder-map.jpg" alt="Mappa placeholder" style="width:100%;max-width:600px;height:auto;border:1px solid #ccc;margin-top:10px;">
+                <p><a href="https://www.google.com/maps/search/?api=1&query=[INDIRIZZO_URL_ENCODED]" target="_blank" class="btn btn-secondary" style="margin-top:10px;">Apri in Google Maps</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> [NOME AZIENDA]. Tutti i diritti riservati.</p>
+            <p>P.IVA [PARTITA IVA] - <a href="privacy.html">Privacy Policy</a> (Link da creare)</p>
+            <p>Email: <a href="mailto:[EMAIL_AZIENDALE]">[EMAIL_AZIENDALE]</a> - Tel: <a href="tel:[TELEFONO_1]">[TELEFONO_1]</a></p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
