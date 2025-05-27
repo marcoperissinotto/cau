@@ -6,14 +6,15 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif; /* A common, clean sans-serif font */
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    line-height: 1.7; /* Increased for better readability */
+    color: #4A4A4A; /* Darker grey for body text */
+    background-color: #FFFFFF; /* Plain white background for a cleaner look */
 }
 
 .container {
-    width: 80%;
+    width: 85%; /* Slightly wider for a more spacious feel */
+    max-width: 1200px; /* Max width for large screens */
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
@@ -21,22 +22,28 @@ body {
 
 /* Header */
 header {
-    background: #2c3e50; /* Dark Blue */
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid; /* Accent Orange */
+    background: #1E2A38; /* Very dark blue/charcoal - Kinkelder feel */
+    color: #FFFFFF;
+    padding: 20px 0; /* Adjusted padding */
+    border-bottom: #FF6600 5px solid; /* Kinkelder-like orange accent */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header .logo {
     float: left;
-    font-size: 24px;
-    margin: 0;
+    font-size: 30px; 
+    font-weight: 700; /* Bold */
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+header .logo:hover {
+    color: #FF6600; /* Orange accent */
 }
 
 header nav {
     float: right;
-    margin-top: 10px;
+    margin-top: 8px; /* Align with slightly larger logo */
 }
 
 header nav ul {
@@ -45,183 +52,254 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    padding: 0 20px;
+    padding: 0 18px; 
 }
 
 header nav a {
-    color: #fff;
+    color: #E0E0E0; /* Lighter grey for nav links */
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 15px; /* Slightly smaller for a cleaner look */
+    font-weight: 500; /* Medium weight */
+    padding-bottom: 8px; 
+    position: relative; 
+    transition: color 0.3s ease-in-out;
+}
+
+header nav a::after { 
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF6600; /* Orange accent */
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover::after,
+header nav a.current::after {
+    width: 100%;
 }
 
 header nav a.current, header nav a:hover {
-    color: #e8491d; /* Accent Orange */
-    font-weight: bold;
+    color: #FFFFFF; /* White on hover/current */
 }
+
 
 /* Hero Section */
 #hero {
-    background: #34495e; /* Slightly lighter blue */
-    color: #fff;
-    padding: 60px 0;
+    background: #2c3e50; /* Fallback, image preferred */
+    /* background: linear-gradient(rgba(30, 42, 56, 0.85), rgba(30, 42, 56, 0.95)), url('placeholder-industrial-bg.jpg'); */
+    /* Suggestion: Use a high-quality industrial image or abstract tech background if user provides */
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    padding: 100px 0; 
     text-align: center;
 }
 
 #hero h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 42px; 
+    margin-bottom: 25px;
+    font-weight: 700; /* Bold */
+    line-height: 1.3;
 }
 
 #hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 20px; /* Larger intro paragraph */
+    margin-bottom: 40px;
+    max-width: 750px; 
+    margin-left: auto;
+    margin-right: auto;
+    color: #E0E0E0; /* Lighter text on dark bg */
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 14px 30px; 
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    border-radius: 4px; /* Sharper edges */
+    font-size: 16px; 
+    font-weight: 600; /* Bolder */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: none; 
+    letter-spacing: 0.5px; /* Added letter spacing */
 }
 
 .btn-primary {
-    background-color: #e8491d; /* Accent Orange */
-    color: #fff;
-    border: 1px solid #e8491d;
+    background-color: #FF6600; /* Kinkelder Orange */
+    color: #FFFFFF;
 }
 
 .btn-primary:hover {
-    background-color: #d35400; /* Darker Orange */
+    background-color: #E05A00; /* Darker Orange */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .btn-secondary {
-    background-color: #7f8c8d; /* Grey */
-    color: #fff;
-    border: 1px solid #7f8c8d;
+    background-color: #6c757d; /* Medium Grey */
+    color: #FFFFFF;
 }
 
 .btn-secondary:hover {
-    background-color: #6c7a7d; /* Darker Grey */
+    background-color: #5a6268; /* Darker Grey */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* General Section Styling */
 section {
-    padding: 40px 0;
+    padding: 60px 0; 
 }
 
-section h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+section h3 { /* Main section titles */
+    font-size: 34px; 
+    margin-bottom: 40px; 
     text-align: center;
-    color: #2c3e50; /* Dark Blue */
+    color: #1E2A38; /* Dark Blue/Charcoal */
+    font-weight: 700; /* Bold */
 }
+section#services-overview h3, section#cta-contact h3 { /* For sections with dark bg */
+    color: #FFFFFF;
+}
+
 
 /* About Snippet */
 #about-snippet {
-    background-color: #fff;
+    background-color: #F8F9FA; /* Very light grey for subtle separation */
     text-align: center;
+}
+#about-snippet p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    margin-bottom: 25px;
 }
 
 /* Services Overview */
 #services-overview {
-    background-color: #ecf0f1; /* Light Grey */
+    background-color: #343A40; /* Dark grey/charcoal for this section */
+    color: #E0E0E0;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger base size */
+    gap: 30px; 
     margin-top: 20px;
 }
 
 .service-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #FFFFFF; /* White cards on dark bg */
+    color: #4A4A4A;
+    padding: 30px; 
+    border-radius: 6px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     text-align: center;
+    transition: all 0.3s ease-in-out;
+    border-top: 4px solid transparent; /* For hover effect */
 }
 
-.service-card h4 {
-    font-size: 20px;
-    color: #e8491d; /* Accent Orange */
-    margin-bottom: 10px;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    border-top-color: #FF6600; /* Orange accent on hover */
+}
+
+.service-card h4 { 
+    font-size: 22px; 
+    color: #1E2A38; /* Dark Blue/Charcoal for card titles */
+    margin-bottom: 15px; 
 }
 
 .service-card p {
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 16px; /* Standard body font size */
+    margin-bottom: 20px;
 }
 
 .learn-more {
-    color: #2c3e50;
+    color: #FF6600; /* Orange accent */
     text-decoration: none;
     font-weight: bold;
+    font-size: 15px;
+    transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out; /* Added letter-spacing transition */
+}
+.learn-more:hover {
+    color: #E05A00; /* Darker Orange */
+    letter-spacing: 0.5px; /* Slight letter spacing increase on hover */
 }
 
-.learn-more:hover {
-    color: #e8491d;
-}
 
 /* Why Choose Us */
 #why-choose-us {
-    background-color: #fff;
+    background-color: #FFFFFF; /* White background */
 }
 
 #why-choose-us ul {
-    list-style: none; /* Can use icons later */
+    list-style: none; 
     padding-left: 0;
-    max-width: 600px;
+    max-width: 700px; 
     margin: 0 auto;
 }
 
 #why-choose-us ul li {
-    padding: 8px 0;
-    font-size: 16px;
-    border-bottom: 1px dotted #ccc;
+    padding: 15px 10px; 
+    font-size: 18px; /* Larger font */
+    border-bottom: 1px solid #E9ECEF; /* Lighter, cleaner border */
+    transition: background-color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+    position: relative;
+}
+#why-choose-us ul li:hover {
+    background-color: #F8F9FA; /* Very light grey hover */
+    padding-left: 20px; /* Indent on hover */
 }
 #why-choose-us ul li:last-child {
     border-bottom: none;
 }
 #why-choose-us ul li strong {
-    color: #2c3e50;
+    color: #1E2A38; /* Dark Blue/Charcoal */
 }
 
 
 /* CTA Contact */
 #cta-contact {
-    background: #34495e; /* Slightly lighter blue */
-    color: #fff;
+    background: #FF6600; /* Kinkelder Orange */
+    color: #FFFFFF;
     text-align: center;
 }
 #cta-contact p {
-    margin-bottom: 20px;
+    margin-bottom: 25px; 
+    font-size: 20px; /* Larger */
+    font-weight: 500;
 }
 
 /* Footer */
 footer {
-    background: #2c3e50; /* Dark Blue */
-    color: #bdc3c7; /* Light grey text */
+    background: #1E2A38; /* Very dark blue/charcoal */
+    color: #A0A0A0; /* Lighter grey for footer text */
     text-align: center;
-    padding: 30px 0;
+    padding: 50px 0; 
     font-size: 14px;
 }
 
 footer p {
-    margin-bottom: 5px;
+    margin-bottom: 10px; 
 }
 
 footer a {
-    color: #ecf0f1; /* Lighter grey for links */
+    color: #E0E0E0; /* Light grey for links */
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
-    color: #e8491d; /* Accent Orange */
+    color: #FF6600; /* Orange accent */
 }
 
 /* Responsive Adjustments */
@@ -232,24 +310,176 @@ footer a:hover {
         text-align: center;
         width: 100%;
     }
+    header .logo {
+        margin-bottom: 15px;
+    }
 
     header nav ul li {
         display: block;
-        padding: 10px 0;
+        padding: 8px 0; /* Adjusted padding for block display */
+    }
+    header nav a::after { 
+        display: none; /* Simpler nav on mobile */
     }
 
     .container {
-        width: 95%;
+        width: 90%; 
     }
 
     #hero h2 {
-        font-size: 28px;
+        font-size: 32px; 
     }
     #hero p {
-        font-size: 16px;
+        font-size: 18px; 
     }
 
     section h3 {
-        font-size: 24px;
+        font-size: 28px; 
     }
+
+    .btn { 
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Styling for internal page content sections (About, Services, Contact, Privacy) */
+.page-header { /* Optional: for a consistent header on internal pages */
+    background: #F8F9FA;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #E9ECEF;
+    margin-bottom: 40px;
+}
+.page-header h3 {
+    margin-bottom: 0;
+    color: #1E2A38;
+}
+
+/* About Main Section */
+#about-main, #privacy-main {
+    padding: 40px 0; /* Reduced top/bottom padding as page-header adds some */
+}
+#about-main .container > h3, #privacy-main .container > h3 { /* Hide default section H3 if using page-header */
+    /* display: none; */ /* Or style as a page title instead */
+     font-size: 36px; color: #1E2A38; text-align:center; margin-bottom: 40px;
+}
+
+#about-main h4, #privacy-main h4 {
+    font-size: 24px;
+    color: #1E2A38;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+#about-main p, #about-main ul li, 
+#privacy-main p, #privacy-main ul li {
+    font-size: 16px;
+    margin-bottom: 15px; /* Increased spacing */
+    line-height: 1.8; /* Increased line height */
+}
+#about-main ul, #privacy-main ul {
+    list-style: disc;
+    padding-left: 25px; /* Indent list */
+    margin-bottom: 20px;
+}
+
+/* Services Main Section */
+#services-main .intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px; /* Increased spacing */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4A4A4A;
+}
+.service-detail {
+    background-color: #F8F9FA; /* Light grey background for each service block */
+    padding: 30px; /* Increased padding */
+    margin-bottom: 30px; /* Increased spacing */
+    border-radius: 6px; 
+    border-left: 5px solid #FF6600; /* Orange accent border */
+}
+.service-detail h4 {
+    font-size: 24px;
+    color: #1E2A38; /* Dark blue/charcoal */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.service-detail p, .service-detail ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+.service-detail ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+.service-process ol {
+    list-style-position: inside;
+    padding-left: 0; 
+}
+.service-process ol li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    line-height: 1.8;
+}
+.service-process ol li strong {
+    color: #1E2A38;
+}
+
+
+/* Contact Main Section */
+#contact-main .intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4A4A4A;
+}
+.contact-details, .map-placeholder {
+    background-color: #F8F9FA;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+.contact-details h4, .map-placeholder h4 {
+    font-size: 22px;
+    color: #1E2A38;
+    margin-bottom: 20px; /* Increased spacing */
+    font-weight: 600;
+}
+.contact-details p {
+    font-size: 17px; /* Slightly larger for contact details */
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.contact-details p strong {
+    color: #1E2A38;
+    font-weight: 600;
+}
+.contact-details a {
+    color: #FF6600; /* Orange accent */
+    text-decoration: none;
+    font-weight: 500; /* Medium weight for links */
+    transition: color 0.2s ease-in-out;
+}
+.contact-details a:hover {
+    color: #E05A00; 
+    text-decoration: underline;
+}
+.map-placeholder img { /* Style for the placeholder map image */
+    border: 1px solid #DEE2E6; /* Light border */
+    border-radius: 4px;
+}
+
+/* Styling for clickable logo link */
+header .logo a {
+    color: inherit; /* Inherit color from parent h1.logo */
+    text-decoration: none; /* Remove underline */
 }
